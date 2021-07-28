@@ -15,4 +15,9 @@ getRandomCustomer: function () {
 }
 }
 
-console.log(seattle.getRandomCustomer())
+let rand = seattle.getRandomCustomer();
+
+for (let i = 0; this.avgCookiesSoldEachHourArray < 14; i++) {
+console.log(`Hourly cookies sold: ${getRandomCustomer}`);
+console.log(seattle.getRandomCustomer());
+}
