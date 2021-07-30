@@ -161,8 +161,8 @@ paris.render();
 let lima = {
     name: 'Lima',
     min: 2,
-    max: 38,
-    avg: 2.3,
+    max: 16,
+    avg: 4.6,
     getRandomCustomer: function () {
         return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
     },
