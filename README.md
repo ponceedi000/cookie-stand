@@ -4,14 +4,13 @@
 ## cookie-stand
 
 
-I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
+I built an app that calculates the amount of sales for 5 differnt store locations. The min customers per hour(CPH), max CPH, and the avg number of cookies purchased per customer were calculated together and displayed on the table (sales.index). So far we have utlized JS Constructor Functions and basic DOM manipulation to create this project.
 
-### Author: Ediberto Ponce
+### Author: Ediberto Ponce/ worked collaboratively with Christine L, Carrie V, Johnny B, and Brandon T.
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* Any Links you used as reference
+* [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+
 
 ### Reflections and Comments
-* Consider including the answers to your daily journal and submission questions here
-* This is also a good place to reflect on the tools and resources used and learned
+* Utilzing JS Constructor Functions is a great way to shorten your code. This also makes things easier to read for other devlopers when teaming up on a project.
