@@ -31,15 +31,6 @@ this.renderCookiesPerHour = function() {
     }
     console.log(this.cookiesPerHour);
 };
-// this.renderTime = function() {
-//     for (let i = 0; i < hours.length; i++)
-//     let rowCellHeader = document.createElement('th');
-//     rowCellHeader.textContent = hours[i];
-//     th.appendChild(rowCellHeader)
-
-// };
-
-
 
 this.renderCity = function() {
 
@@ -61,7 +52,6 @@ this.renderCity = function() {
     let td = document.createElement('td');
     td.textContent = `Total cookies: ${total}`;
     tr.appendChild(td);
-    // listOfCookies.appendChild(tr);
 }
 
 this.callUponAll = function () {
