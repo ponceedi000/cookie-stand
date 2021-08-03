@@ -1,5 +1,5 @@
 'use strict';
-
+// Create global variables
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
 let listOfCookies = document.getElementById('cookieData');
 let table = document.createElement('table')
@@ -19,7 +19,6 @@ Cookiestore.prototype.getRandomNumber = function(min,max) {
         let randomNumber = Math.floor(((Math.random() * (max - min)) + min) + 1)
         return randomNumber;
     };
-
     Cookiestore.prototype.renderCustomerPerHour = function(min,max) {
         for (let i = 0; i <hours.length; i++) {
             let num = this.getRandomNumber(this.min, this.max)
@@ -57,22 +56,9 @@ Cookiestore.prototype.getRandomNumber = function(min,max) {
         td.textContent = `Total cookies: ${total}`;
         tr.appendChild(td);
         }   
-
-
-        // this.callUponAll = function () {
-        // this.renderCustomerPerHour();
-        // this.renderCookiesPerHour();
-        // this.renderCity();
-        // }
-        // this.callUponAll();
-        // this.shopArray.push(this);
-
     Cookiestore.prototype.shopArray = [];
     console.log(Cookiestore.prototype.shopArray)
 
-    // for (let i = 0; i <storeArray.length; i++) {
-    //     storeArray[i].renderCity();
-    // }
 
     //Header portion of table
 function tableHeader() {
@@ -84,7 +70,6 @@ function tableHeader() {
         let td = document.createElement('td')
         td.textContent = hours[i];
         timeRow.appendChild(td)
-        
     }
     let td = document.createElement('td')
     td.textContent = 'Daily Location Total'
@@ -92,8 +77,6 @@ function tableHeader() {
     table.appendChild(timeRow)
     }
     
-
-
 
     //Footer portion of table
 function renderFooterTable() {
@@ -129,9 +112,7 @@ function renderFooterTable() {
     }
     
     
-
-
-    // Created instances for each function
+// Created instances for each function
     const seattle = new Cookiestore('Seattle', 23, 65, 6.3);
     const tokyo = new Cookiestore('Tokyo', 3, 24, 1.2);
     const dubai = new Cookiestore('Dubai', 11, 38, 3,7);
@@ -139,12 +120,11 @@ function renderFooterTable() {
     const lima = new Cookiestore('Lima', 2, 16, 0.6);
     console.log(storeArray);
     tableHeader();
-
+// Invokes renderCity function for each instance
     seattle.renderCity();
     tokyo.renderCity();
     dubai.renderCity();
     paris.renderCity();
     lima.renderCity();
-
     renderFooterTable();
 
