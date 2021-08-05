@@ -10,7 +10,8 @@ I built an app that calculates the amount of sales for 5 differnt store location
 
 ### Links and Resources
 * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
-
+* [freeCodeCamp](https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/)
+* [coolors](https://coolors.co/palettes/popular)
 
 ### Reflections and Comments
 * Utilzing JS Constructor Functions is a great way to shorten your code. This also makes things easier to read for other devlopers when teaming up on a project.
