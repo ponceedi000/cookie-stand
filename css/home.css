@@ -55,6 +55,11 @@ section:nth-child(1) {
     display: flex;
     flex-direction: row;
     margin:25px 10px 25px 10px;
+    
+}
+section:nth-child(1)>img {
+    border: 1px solid black;
+    border-radius: 30px;
 }
 div {
     height: 300px;
@@ -77,6 +82,7 @@ flex-direction: row;
 flex-wrap: wrap;
 justify-content: space-between;
 padding:10px;
+
 }
 article section:nth-child(2)>img:nth-child(5) {
     margin-top: 45px;
@@ -84,6 +90,7 @@ article section:nth-child(2)>img:nth-child(5) {
 article section:nth-child(2)>img {
     border-radius: 30px;
     margin:0 auto;
+    border: 1px solid black;
 }
 
 article section:nth-child(3) {
@@ -100,24 +107,32 @@ article section:nth-child(3)>h3 {
 }
 
 article section:nth-child(3)>ul {
-    background-color: black;
+    background-color: #E9C46A;
+    padding: 20px;
+    border-radius: 30px;
+    border: 1px solid black;
 }
 
+article section:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:25px 10px 25px 10px;
+}
+article section:nth-child(4)>h3 {
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: underline;
+    padding: 10px;
+}
 
-
-/* p {
-    padding-left: 10px;
-} */
-
-
-
-
-
-
-
-
-
-
+article section:nth-child(4)>p {
+    background-color: #E9C46A;
+    padding: 20px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+    border: 1px solid black;
+}
 
 
 
@@ -126,7 +141,7 @@ footer {
     width: 100%;
     padding: 25px;
 }
-footer h3 {
+footer>h3 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -135,11 +150,29 @@ footer h3 {
     font-size: 32px;
     margin-bottom: 20px;
 }
-footer section {
+footer>section {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-footer section a {
+footer>section a {
     margin: 0px 10px 0px 10px;
+}
+
+footer section:nth-child(3) { 
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+footer section:nth-child(3)>h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer section:nth-child(3)>ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
