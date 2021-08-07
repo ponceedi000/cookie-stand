@@ -93,7 +93,6 @@ function renderFooterTable() {
         for (let i = 0; i < storeArray.length; i++) {
             let currentStore = storeArray[i];
             cookieHourlyTotal += currentStore.cookiesPerHour[h];
-            console.log('lkjdsf', storeArray[i]);
             }
             const shopCellElem2 = document.createElement('td');
             shopCellElem2.textContent = `${cookieHourlyTotal}`;
@@ -111,7 +110,6 @@ function renderFooterTable() {
         footerElem.appendChild(shopCellElem3);
     }
     
-    
 // Created instances for each function
     const seattle = new Cookiestore('Seattle', 23, 65, 6.3);
     const tokyo = new Cookiestore('Tokyo', 3, 24, 1.2);
@@ -120,6 +118,7 @@ function renderFooterTable() {
     const lima = new Cookiestore('Lima', 2, 16, 0.6);
     console.log(storeArray);
     tableHeader();
+
 // Invokes renderCity function for each instance
     seattle.renderCity();
     tokyo.renderCity();
@@ -128,3 +127,27 @@ function renderFooterTable() {
     lima.renderCity();
     renderFooterTable();
 
+
+
+// Add store form
+let storeForm = document.getElementById('cookieForm');
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let locationOfStore = event.target.storeLocation.value;
+    let customerMin = parseInt(event.target.minCustomer.value);
+    let customerMax = parseInt(event.target.maxCustomer.value);
+    let cookieAvg = parseInt(event.target.avgCookie.value);
+
+    let newStore = new Cookiestore(
+        locationOfStore,
+        customerMin,
+        customerMax,
+        cookieAvg,
+    );
+    console.log(Cookiestore);
+    newStore.renderCity();
+    // newStore.renderFooterTable();
+}
+
+storeForm.addEventListener('submit', handleSubmit);
