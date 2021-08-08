@@ -81,6 +81,7 @@ function tableHeader() {
     //Footer portion of table
 function renderFooterTable() {
     const footerElem = document.createElement('tfoot');
+    footerElem.setAttribute('id', 'tableFooter');
     table.appendChild(footerElem);
     
     const rowFooterElem = document.createElement('th');
@@ -93,7 +94,6 @@ function renderFooterTable() {
         for (let i = 0; i < storeArray.length; i++) {
             let currentStore = storeArray[i];
             cookieHourlyTotal += currentStore.cookiesPerHour[h];
-            console.log('lkjdsf', storeArray[i]);
             }
             const shopCellElem2 = document.createElement('td');
             shopCellElem2.textContent = `${cookieHourlyTotal}`;
@@ -111,7 +111,6 @@ function renderFooterTable() {
         footerElem.appendChild(shopCellElem3);
     }
     
-    
 // Created instances for each function
     const seattle = new Cookiestore('Seattle', 23, 65, 6.3);
     const tokyo = new Cookiestore('Tokyo', 3, 24, 1.2);
@@ -120,11 +119,51 @@ function renderFooterTable() {
     const lima = new Cookiestore('Lima', 2, 16, 0.6);
     console.log(storeArray);
     tableHeader();
-// Invokes renderCity function for each instance
-    seattle.renderCity();
-    tokyo.renderCity();
-    dubai.renderCity();
-    paris.renderCity();
-    lima.renderCity();
-    renderFooterTable();
 
+// Invokes renderCity function for each instance
+seattle.renderCity();
+tokyo.renderCity();
+dubai.renderCity();
+paris.renderCity();
+lima.renderCity();
+renderFooterTable();
+
+
+
+// Add new store form
+let storeForm = document.getElementById('cookieForm');
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let locationOfStore = event.target.storeLocation.value;
+    let customerMin = parseInt(event.target.minCustomer.value);
+    let customerMax = parseInt(event.target.maxCustomer.value);
+    let cookieAvg = parseInt(event.target.avgCookie.value);
+
+    new Cookiestore(
+        locationOfStore,
+        customerMin,
+        customerMax,
+        cookieAvg,
+    );
+
+    
+clearAllForm();
+renderTable();
+}
+function renderTable() {
+    table.innerHTML = null;
+    tableHeader();
+    for (let i = 0; i < storeArray.length; i++) {
+        storeArray[i].renderCity();
+    }
+    renderFooterTable();
+}
+storeForm.addEventListener('submit', handleSubmit);
+
+function clearAllForm () {
+    event.target.storeLocation.value = null;
+    event.target.minCustomer.value = null;
+    event.target.maxCustomer.value = null;
+    event.target.avgCookie.value = null;
+}
