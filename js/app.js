@@ -81,6 +81,7 @@ function tableHeader() {
     //Footer portion of table
 function renderFooterTable() {
     const footerElem = document.createElement('tfoot');
+    footerElem.setAttribute('id', 'tableFooter');
     table.appendChild(footerElem);
     
     const rowFooterElem = document.createElement('th');
@@ -120,16 +121,16 @@ function renderFooterTable() {
     tableHeader();
 
 // Invokes renderCity function for each instance
-    seattle.renderCity();
-    tokyo.renderCity();
-    dubai.renderCity();
-    paris.renderCity();
-    lima.renderCity();
-    renderFooterTable();
+seattle.renderCity();
+tokyo.renderCity();
+dubai.renderCity();
+paris.renderCity();
+lima.renderCity();
+renderFooterTable();
 
 
 
-// Add store form
+// Add new store form
 let storeForm = document.getElementById('cookieForm');
 
 function handleSubmit(event) {
@@ -139,15 +140,30 @@ function handleSubmit(event) {
     let customerMax = parseInt(event.target.maxCustomer.value);
     let cookieAvg = parseInt(event.target.avgCookie.value);
 
-    let newStore = new Cookiestore(
+    new Cookiestore(
         locationOfStore,
         customerMin,
         customerMax,
         cookieAvg,
     );
-    console.log(Cookiestore);
-    newStore.renderCity();
-    // newStore.renderFooterTable();
-}
 
+    
+clearAllForm();
+renderTable();
+}
+function renderTable() {
+    table.innerHTML = null;
+    tableHeader();
+    for (let i = 0; i < storeArray.length; i++) {
+        storeArray[i].renderCity();
+    }
+    renderFooterTable();
+}
 storeForm.addEventListener('submit', handleSubmit);
+
+function clearAllForm () {
+    event.target.storeLocation.value = null;
+    event.target.minCustomer.value = null;
+    event.target.maxCustomer.value = null;
+    event.target.avgCookie.value = null;
+}
