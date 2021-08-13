@@ -15,3 +15,5 @@ I built an app that calculates the amount of sales for 5 differnt store location
 
 ### Reflections and Comments
 * Utilzing JS Constructor Functions is a great way to shorten your code. This also makes things easier to read for other devlopers when teaming up on a project.
+* Understanding how to structure your HTML helps a lot when coding your CSS. 
+* CSS becomes extremely easier when you understand what selectors you should/shouldn't use! 
